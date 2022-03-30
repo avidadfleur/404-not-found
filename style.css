@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 24px;
+  margin: 20;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  grid-template-rows: auto 1fr auto;
+
+  grid-template-areas: 
+    "header header"
+    "image text"
+    "footer footer";
+
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+}
+
+header h3 {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  margin-left: 24px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+}
+
+main .image {
+  margin: 40px;
+}
+
+main .image img {
+  width: 100%;
+  object-fit: contain;
+}
+
+main .text {
+  margin: 40px;
+}
+
+.text h1 {
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  font-size: 64px;
+  color: #333;
+}
+
+.text p {
+  font-family: 'Space Mono', monospace;
+  font-size: 24px;
+  color: #4f4f4f;
+  max-width: 381px;
+  margin-bottom: 40px;
+}
+
+.text button {
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  background-color: #333;
+  color: white;
+  padding: 24px 36px;
+}
+
+footer {
+  grid-area: footer;
+  margin: 0 auto;
+}
+
+footer span {
+  color: #bdbdbd;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+@media only screen and (max-width: 900px) {
+  main {
+    display: block;
+  }
+
+  .text h1 {
+    font-size: 48px;
+  }
+
+  .text p {
+    font-size: 18px;
+  }
+
+  .text button {
+    margin-bottom: 60px;
+  }
+}
